@@ -63,19 +63,27 @@ body {
 }
 
 .item-cont .item-list li {
-  display: block;
+  display: grid;
+  grid-template-columns: 14fr 1fr 1fr;
   margin-bottom: 2vh;
 }
 
 .item-cont .item-list li.checked {
-  color: green;
+  color: #3bce69;
 }
 
 .item-cont .item-list li .checkbox {
+  background-image: url(../IMG/checkmark.svg);
+  background-repeat: no-repeat;
   float: right;
+  padding-right: 30px;
 }
 
 .item-cont .item-list li .remove {
+  background-image: url(../IMG/trash.svg);
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
   float: right;
 }
 

@@ -1,11 +1,14 @@
+var form = document.getElementById("form");
+var input = document.getElementById("name-input");
+var btn = document.getElementById("sub-btn");
+var list = document.getElementById("list");
+
 window.onload = function() {
+
  
     var ls1 = '<div class="remove" onclick="remove(this)"></div>';
     var ls2 = '<div class="checkbox" onclick="check(this)"></div>';
-    var form = document.getElementById("form");
-    var input = document.getElementById("name-input");
-    var btn = document.getElementById("sub-btn");
-    var list = document.getElementById("list");
+    
 
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -15,15 +18,7 @@ window.onload = function() {
         list.value = "";
     }, false)
 
-    list.addEventListener('click', function (e) {
-        var t = e.target;
-        if (t.classList.contains('checked')) {
-            t.parentNode.removeChild(t);
-            store();
-        }
-        
-        
-    }, false)
+    
     getStored();
 }
 
@@ -52,8 +47,7 @@ function getStored() {
 }
 
 function remove(el) {
-    var ic = el.parentNode;
-    var item = ic.parentNode;
+    var item = el.parentNode;
     item.parentNode.removeChild(item);
     store();
 }
